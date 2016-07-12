@@ -25,7 +25,7 @@ string filename;
 int main( void )
 {
     //VideoCapture capture;
-    Mat frame = imread("./media/Steve_carell.jpg");
+    Mat frame = imread("./media/tswift.jpg");
 
     //-- 1. Load the cascades
     if( !face_cascade.load( face_cascade_name ) ){ printf("--(!)Error loading face cascade\n"); return -1; };
@@ -114,7 +114,7 @@ void detectAndDisplay( Mat frame )
         filename = ssfn.str();
         filenumber++;
 
-        imwrite(filename, gray);
+        imwrite("./cropped" + filename, gray);
 
         Point pt1(faces[ic].x, faces[ic].y);
         Point pt2((faces[ic].x + faces[ic].height), (faces[ic].y + faces[ic].width));
